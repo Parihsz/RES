@@ -1,5 +1,5 @@
-# EasyMath
-✖️➕ Blazingly fast and easy Maths Utility library
+# RES
+✖️⚡ RES is Blazingly fast and abstracted Maths libraries container for roblox.
 
 # StrMath
 I've designed the StrMath library to allow for super quick arithmetic operations on large _integers_ represented as strings. This allows handling numbers that would otherwise exceed the typical numeric limits in Lua. I've provided functionalities for basic arithmetic such as addition, subtraction, multiplication, division, modulus, and exponentiation.
