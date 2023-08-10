@@ -2,7 +2,7 @@
 ✖️➕ Blazingly fast and easy Maths Utility library
 
 # StrMath
-I've designed the StrMath library to allow for super quick arithmetic operations on large _integers_ represented as strings. This allows handling numbers that would otherwise exceed the typical numeric limits in Lua. I've provided functionalities for basic arithmetic such as addition, subtraction, multiplication, division, modulus, and exponentiation. I've employed some special techniques such as Karatsuba multiplication which is used to handle multiplication more efficiently, and utilities are included for validating and manipulating these string-represented numbers.
+I've designed the StrMath library to allow for super quick arithmetic operations on large _integers_ represented as strings. This allows handling numbers that would otherwise exceed the typical numeric limits in Lua. I've provided functionalities for basic arithmetic such as addition, subtraction, multiplication, division, modulus, and exponentiation.
 
 Usage:
 ```lua
