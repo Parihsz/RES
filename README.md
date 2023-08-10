@@ -25,7 +25,7 @@ print("Remainder:", remainder) -- Output: Remainder: 420518084951183820205145409
 ```
 
 # MatrixOp
-I've designed the MatrixOp library to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
+The MatrixOp library was created to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
 
 Usage:
 ```lua
@@ -46,3 +46,61 @@ print("Transpose:", transposeA) -- Outputs the transposed matrix
 print("Determinant:", determinantA) -- Outputs the determinant of the matrix
 print("Inverse:", inverseA)   -- Outputs the inverse of the matrix
 ```
+
+# Graphs
+I designed the Graphs library to allow for fast and efficient graph operations in Lua. It provides functionalities for creating and manipulating both directed and undirected graphs. The library supports common graph algorithms such as Depth First Search (DFS), Breadth First Search (BFS), Dijkstra's algorithm for shortest path, and some utility functions like checking connectivity and degree of a vertex.
+
+Usage:
+
+Creating a Graph:
+```lua
+local Graphs = require path.to.Graphs
+
+local vertices = {1, 2, 3, 4, 5}
+local edges = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 1}}
+
+local graph = Graphs.Graph:new(vertices, edges)
+```
+
+Adding an edge:
+You can add an edge between two vertices with an optional weight (default weight is 1).
+```lua
+graph:addEdge(1, 2, 10)
+```
+
+DFS
+You can perform a DFS from a given start vertex.
+```lua
+graph:DFS(1)
+```
+Breadth First Search (BFS)
+You can perform a BFS from a given start vertex.
+```lua
+graph:BFS(1)
+```
+
+Dijkstra's Algorithm
+You can find the shortest paths from a given start vertex to all other vertices.
+```lua
+local distances, previous = graph:dijkstra(1)
+```
+
+Check if Graph is Connected
+You can check if the graph is connected.
+```lua
+local isConnected = graph:isConnected()
+```
+
+Get Degree of Vertex
+You can get the degree of a given vertex.
+```lua
+local degree = graph:getDegree(1)
+```
+
+Working with Adjacent Vertices
+You can retrieve the adjacent vertices of a given vertex.
+```lua
+local adjacentVertices = graph:getAdjacentVertices(1)
+```
+
+
