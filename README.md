@@ -102,5 +102,44 @@ You can retrieve the adjacent vertices of a given vertex.
 ```lua
 local adjacentVertices = graph:getAdjacentVertices(1)
 ```
+# Scalars
+I built the Scalars library to provide fast and efficient arithmetic operations on integers in a modular setting (ZmodP) and real-valued scalar functions. The library includes functionalities for addition, subtraction, multiplication, exponentiation, inverse in modular arithmetic, and general scalar operations like square root, sine, cosine, and natural logarithm.
+
+Usage:
+
+General Functions
+```lua
+local Scalars = require path.to.Scalars
+local ScalarMaths = Scalars.ScalarMaths
+
+local value = 25
+
+local sqrtValue = ScalarMaths:sqrt(value)
+print("Square Root of", value, "is", sqrtValue)
+
+local sinValue = ScalarMaths:sin(value)
+print("Sine of", value, "is", sinValue)
+
+local cosValue = ScalarMaths:cos(value)
+print("Cosine of", value, "is", cosValue)
+
+local logValue = ScalarMaths:log(value)
+print("Natural Logarithm of", value, "is", logValue)
+```
+
+ZmodP
+```lua
+local Scalars = require path.to.Scalars
+
+local ZmodP = Scalars.ZmodP
+local number1 = ZmodP:new(42, 97)
+local number2 = ZmodP:new(58, 97)
+
+local sum = number1:add(number2)
+local difference = number1:subtract(number2)
+local product = number1:multiply(number2)
+local power = number1:exponential(5)
+local inverse = number1:inverse()
+```
 
 
