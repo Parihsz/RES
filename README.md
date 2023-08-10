@@ -24,7 +24,7 @@ print("Quotient:", quotient) -- Output: Quotient: 1.1557273497909217170931707286
 print("Remainder:", remainder) -- Output: Remainder: 42051808495118382020514540926987021367060802777631052526762208498189906616608558082
 ```
 
-# Matrix Op
+# MatrixOp
 I've designed the MatrixOp library to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
 
 Usage:
