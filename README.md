@@ -23,3 +23,26 @@ print("Difference:", difference) -- Output: Difference: 423313825131748004310235
 print("Quotient:", quotient) -- Output: Quotient: 1.15572734979092171709317072861359384154890420539925378682752234057380300685082454856
 print("Remainder:", remainder) -- Output: Remainder: 42051808495118382020514540926987021367060802777631052526762208498189906616608558082
 ```
+
+# Matrix Op
+I've designed the MatrixOp library to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
+
+Usage:
+```lua
+local Matrix = require path.to.Matrix
+
+local matrixA = Matrix.new(3, 3, {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
+local matrixB = Matrix.new(3, 3, {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}})
+
+local sum = matrixA + matrixB
+local product = matrixA * matrixB
+local transposeA = matrixA:transpose()
+local determinantA = matrixA:determinant()
+local inverseA = matrixA:inverse()
+
+print("Sum:", sum)            -- Outputs a matrix representing the sum
+print("Product:", product)    -- Outputs a matrix representing the product
+print("Transpose:", transposeA) -- Outputs the transposed matrix
+print("Determinant:", determinantA) -- Outputs the determinant of the matrix
+print("Inverse:", inverseA)   -- Outputs the inverse of the matrix
+```
