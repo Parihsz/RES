@@ -56,6 +56,29 @@ You can retrieve the adjacent vertices of a given vertex.
 local adjacentVertices = graph:getAdjacentVertices(1)
 ```
 
+## MatrixOp
+The MatrixOp library was created to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
+
+### Usage:
+```lua
+local Matrix = require path.to.Matrix
+
+local matrixA = Matrix.new(3, 3, {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
+local matrixB = Matrix.new(3, 3, {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}})
+
+local sum = matrixA + matrixB
+local product = matrixA * matrixB
+local transposeA = matrixA:transpose()
+local determinantA = matrixA:determinant()
+local inverseA = matrixA:inverse()
+
+print("Sum:", sum)            -- Outputs a matrix representing the sum
+print("Product:", product)    -- Outputs a matrix representing the product
+print("Transpose:", transposeA) -- Outputs the transposed matrix
+print("Determinant:", determinantA) -- Outputs the determinant of the matrix
+print("Inverse:", inverseA)   -- Outputs the inverse of the matrix
+```
+
 ## Scalars
 I built the Scalars library to provide fast and efficient arithmetic operations on integers in a modular setting (ZmodP) and real-valued scalar functions. The library includes functionalities for addition, subtraction, multiplication, exponentiation, inverse in modular arithmetic, and general scalar operations like square root, sine, cosine, and natural logarithm.
 
@@ -94,29 +117,6 @@ local difference = number1:subtract(number2)
 local product = number1:multiply(number2)
 local power = number1:exponential(5)
 local inverse = number1:inverse()
-```
-
-## MatrixOp
-The MatrixOp library was created to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
-
-### Usage:
-```lua
-local Matrix = require path.to.Matrix
-
-local matrixA = Matrix.new(3, 3, {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}})
-local matrixB = Matrix.new(3, 3, {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}})
-
-local sum = matrixA + matrixB
-local product = matrixA * matrixB
-local transposeA = matrixA:transpose()
-local determinantA = matrixA:determinant()
-local inverseA = matrixA:inverse()
-
-print("Sum:", sum)            -- Outputs a matrix representing the sum
-print("Product:", product)    -- Outputs a matrix representing the product
-print("Transpose:", transposeA) -- Outputs the transposed matrix
-print("Determinant:", determinantA) -- Outputs the determinant of the matrix
-print("Inverse:", inverseA)   -- Outputs the inverse of the matrix
 ```
 
 ## StrMath
