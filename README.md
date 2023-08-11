@@ -21,7 +21,7 @@ You can add an edge between two vertices with an optional weight (default weight
 graph:addEdge(1, 2, 10)
 ```
 
-#### DFS: 
+#### Depth First Search (DFS): 
 You can perform a DFS from a given start vertex.
 ```lua
 graph:DFS(1)
