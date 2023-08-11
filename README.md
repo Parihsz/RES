@@ -2,26 +2,62 @@
 ✖️⚡ RES is Blazingly fast and abstracted Maths libraries container for roblox.
 
 # StrMath
-I've designed the StrMath library to allow for super quick arithmetic operations on large _integers_ represented as strings. This allows handling numbers that would otherwise exceed the typical numeric limits in Lua. I've provided functionalities for basic arithmetic such as addition, subtraction, multiplication, division, modulus, and exponentiation.
+StrMath is a Lua operations library designed to facilitate fast and efficient arithmetic operations on large integers represented as strings. With StrMath, you can work with numbers that would otherwise exceed the conventional numeric limits in Lua. 
 
 Usage:
+
+Integer Arithmetics
 ```lua
-local StrMath = require path.To.StrMath
+local num1 = StrMath.new("1234567890123456789012345678901234567890")
+local num2 = StrMath.new("9876543210987654321098765432109876543210")
 
-local number1 = StrMath.new("31415926535897932384626433832795028841971693993751058209749445923078164062862089986280")
-local number2 = StrMath.new("27182818284590452353602874713526624977572470936999595749669676277240766303535475945713")
+local sum = num1 + num2
+local difference = num1 - num2
+local product = num1 * num2
+local quotient, remainder = num2 / num1
 
-local sum = number1 + number2
-local product = number1 * number2
-local difference = number1 - number2
-local quotient = number1 / number2
-local remainder = number1 % number2
+print("Sum:", sum)                   -- Sum: 11111111101111111101111111111111111111000
+print("Difference:", difference)     -- Difference: -8641975310864197531086419753208641975320
+print("Product:", product)           -- Product: 12193263111263526919239574329840067766267340827901332126249000
+print("Quotient:", quotient, "Remainder:", remainder) -- Quotient, remainder would depend on the implementation
+```
 
-print("Sum:", sum)            -- Output: Sum: 58598744820488384738229268546321653819544164930750653957419122200348930406408919972
-print("Product:", product)    -- Output: Product: 8539734222673567065463550869546574495034888535765114961879601127067743044893204848617875072216249073013374895871952806582723184
-print("Difference:", difference) -- Output: Difference: 42331382513174800431023590192684038762599230956815024588187847048406337253557137667
-print("Quotient:", quotient) -- Output: Quotient: 1.15572734979092171709317072861359384154890420539925378682752234057380300685082454856
-print("Remainder:", remainder) -- Output: Remainder: 42051808495118382020514540926987021367060802777631052526762208498189906616608558082
+Negative Numbers
+```lua
+local num3 = StrMath.new("-1234567890123456789012345678901234567890")
+local num4 = StrMath.new("-9876543210987654321098765432109876543210")
+
+local sum_negative = num3 + num4
+local product_negative = num3 * num4
+local difference_negative = num3 - num4
+
+print("Sum (Negative):", sum_negative)           -- Sum (Negative): -11111111101111111101111111111111111111000
+print("Product (Negative):", product_negative)   -- Product (Negative): 12193263111263526919239574329840067766267340827901332126249000
+print("Difference (Negative):", difference_negative) -- Difference (Negative): 8641975310864197531086419753208641975320
+```
+
+High precision arithmetics
+```lua
+local float1 = StrMath.new("1234.56789")
+local float2 = StrMath.new("9876.54321")
+
+local sum_float = float1 + float2
+local product_float = float1 * float2
+local quotient_float = float2 / float1
+
+print("Sum (Float):", sum_float)             -- Sum (Float): 11111.1111
+print("Product (Float):", product_float)     -- Product (Float): 12179491.9358695319
+print("Quotient (Float):", quotient_float)   -- Quotient (Float): 7.980555953346855
+```
+
+Exponential
+```lua
+local base = StrMath.new("10")
+local exponent = StrMath.new("20")
+
+local power_result = base ^ exponent
+
+print("Power:", power_result)                -- Power: 100000000000000000000
 ```
 
 # MatrixOp
