@@ -32,7 +32,7 @@ You can perform a BFS from a given start vertex.
 graph:BFS(1)
 ```
 
-### Dijkstra's Algorithm: 
+#### Dijkstra's Algorithm: 
 You can find the shortest paths from a given start vertex to all other vertices.
 ```lua
 local distances, previous = graph:dijkstra(1)
