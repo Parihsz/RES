@@ -20,7 +20,7 @@ local graph = Graphs.Graph:new(vertices, edges)
 #### Adding an edge:
 You can add an edge between two vertices with an optional weight (default weight is 1).
 ```lua
-graph:addEdge(1, 2, 10)
+graph:AddEdge(1, 2, 10)
 ```
 
 #### Depth First Search (DFS): 
@@ -37,25 +37,25 @@ graph:BFS(1)
 #### Dijkstra's Algorithm: 
 You can find the shortest paths from a given start vertex to all other vertices.
 ```lua
-local distances, previous = graph:dijkstra(1)
+local distances, previous = graph:Dijkstra(1)
 ```
 
 #### Check if Graph is Connected: 
 You can check if the graph is connected.
 ```lua
-local isConnected = graph:isConnected()
+local isConnected = graph:IsConnected()
 ```
 
 #### Get Degree of Vertex: 
 You can get the degree of a given vertex.
 ```lua
-local degree = graph:getDegree(1)
+local degree = graph:GetDegree(1)
 ```
 
 #### Working with Adjacent Vertices: 
 You can retrieve the adjacent vertices of a given vertex.
 ```lua
-local adjacentVertices = graph:getAdjacentVertices(1)
+local adjacentVertices = graph:GetAdjacentVertices(1)
 ```
 
 ## MatrixOp
@@ -70,9 +70,9 @@ local matrixB = Matrix.new(3, 3, {{9, 8, 7}, {6, 5, 4}, {3, 2, 1}})
 
 local sum = matrixA + matrixB
 local product = matrixA * matrixB
-local transposeA = matrixA:transpose()
-local determinantA = matrixA:determinant()
-local inverseA = matrixA:inverse()
+local transposeA = matrixA:Transpose()
+local determinantA = matrixA:Determinant()
+local inverseA = matrixA:Inverse()
 
 print("Sum:", sum)            -- Outputs a matrix representing the sum
 print("Product:", product)    -- Outputs a matrix representing the product
@@ -93,16 +93,16 @@ local ScalarMaths = Scalars.ScalarMaths
 
 local value = 25
 
-local sqrtValue = ScalarMaths:sqrt(value)
+local sqrtValue = ScalarMaths:Sqrt(value)
 print("Square Root of", value, "is", sqrtValue)
 
-local sinValue = ScalarMaths:sin(value)
+local sinValue = ScalarMaths:Sin(value)
 print("Sine of", value, "is", sinValue)
 
-local cosValue = ScalarMaths:cos(value)
+local cosValue = ScalarMaths:Cos(value)
 print("Cosine of", value, "is", cosValue)
 
-local logValue = ScalarMaths:log(value)
+local logValue = ScalarMaths:Log(value)
 print("Natural Logarithm of", value, "is", logValue)
 ```
 
@@ -114,11 +114,11 @@ local ZmodP = Scalars.ZmodP
 local number1 = ZmodP:new(42, 97)
 local number2 = ZmodP:new(58, 97)
 
-local sum = number1:add(number2)
-local difference = number1:subtract(number2)
-local product = number1:multiply(number2)
-local power = number1:exponential(5)
-local inverse = number1:inverse()
+local sum = number1:Add(number2)
+local difference = number1:Subtract(number2)
+local product = number1:Multiply(number2)
+local power = number1:Exponential(5)
+local inverse = number1:Inverse()
 ```
 
 ## StrMath
