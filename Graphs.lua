@@ -26,13 +26,13 @@ function Graph:new(vertices, edges)
 	return o
 end
 
-function Graph:addEdge(v1, v2, weight)
+function Graph:AddEdge(v1, v2, weight)
 	weight = weight or 1
 	table.insert(self.adjacencyList[v1], {vertex = v2, weight = weight})
 	table.insert(self.adjacencyList[v2], {vertex = v1, weight = weight})
 end
 
-function Graph:getAdjacentVertices(v)
+function Graph:GetAdjacentVertices(v)
 	return self.adjacencyList[v]
 end
 
@@ -66,7 +66,7 @@ function Graph:BFS(startVertex)
 	end
 end
 
-function Graph:dijkstra(startVertex)
+function Graph:Dijkstra(startVertex)
 	local distances = {}
 	local previous = {}
 	local unvisited = {}
@@ -117,7 +117,7 @@ function Graph:isConnected()
 	return true
 end
 
-function Graph:getDegree(vertex)
+function Graph:GetDegree(vertex)
 	return #self.adjacencyList[vertex]
 end
 
