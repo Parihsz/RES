@@ -10,29 +10,29 @@ end
 local Complex = {}
 Complex.__index = Complex
 
-function Complex:New(real, imaginary)
+function Complex:new(real, imaginary)
   return setmetatable({real = real or 0, imaginary = imaginary or 0}, self)
 end
 
 function Complex:Add(other)
-  return Complex:New(self.real + other.real, self.imaginary + other.imaginary)
+  return Complex:new(self.real + other.real, self.imaginary + other.imaginary)
 end
 
 function Complex:Subtract(other)
-  return Complex:New(self.real - other.real, self.imaginary - other.imaginary)
+  return Complex:new(self.real - other.real, self.imaginary - other.imaginary)
 end
 
 function Complex:Multiply(other)
   local real = self.real * other.real - self.imaginary * other.imaginary
   local imaginary = self.real * other.imaginary + self.imaginary * other.real
-  return Complex:New(real, imaginary)
+  return Complex:new(real, imaginary)
 end
 
 function Complex:Divide(other)
   local denom = other.real^2 + other.imaginary^2
   local real = (self.real * other.real + self.imaginary * other.imaginary) / denom
   local imaginary = (self.imaginary * other.real - self.real * other.imaginary) / denom
-  return Complex:New(real, imaginary)
+  return Complex:new(real, imaginary)
 end
 
 function Complex:Magnitude()
@@ -52,7 +52,7 @@ end
 
 local Rational = {}
 
-function Rational:New(numerator, denominator)
+function Rational:new(numerator, denominator)
     local common_divisor = gcd(numerator, denominator)
     return setmetatable({
       numerator = numerator / common_divisor,
@@ -63,21 +63,21 @@ end
 function Rational:Add(other)
     local numerator = self.numerator * other.denominator + other.numerator * self.denominator
     local denominator = self.denominator * other.denominator
-    return Rational:New(numerator, denominator)
+    return Rational:new(numerator, denominator)
 end
 
 function Rational:Subtract(other)
     local numerator = self.numerator * other.denominator - other.numerator * self.denominator
     local denominator = self.denominator * other.denominator
-    return Rational:New(numerator, denominator)
+    return Rational:new(numerator, denominator)
 end
 
 function Rational:Multiply(other)
-    return Rational:New(self.numerator * other.numerator, self.denominator * other.denominator)
+    return Rational:new(self.numerator * other.numerator, self.denominator * other.denominator)
 end
 
 function Rational:Divide(other)
-    return Rational:New(self.numerator * other.denominator, self.denominator * other.numerator)
+    return Rational:new(self.numerator * other.denominator, self.denominator * other.numerator)
 end
 
 function Rational:toDecimal()
@@ -91,20 +91,20 @@ end
 local ZmodP = {}
 ZmodP.__index = ZmodP
 
-function ZmodP:New(value, modulus)
+function ZmodP:new(value, modulus)
     return setmetatable({value = value % modulus, modulus = modulus}, self)
 end
 
 function ZmodP:Add(other)
-    return ZmodP:New(self.value + other.value, self.modulus)
+    return ZmodP:new(self.value + other.value, self.modulus)
 end
 
 function ZmodP:Subtract(other)
-    return ZmodP:New(self.value - other.value, self.modulus)
+    return ZmodP:new(self.value - other.value, self.modulus)
 end
 
 function ZmodP:Multiply(other)
-    return ZmodP:New(self.value * other.value, self.modulus)
+    return ZmodP:new(self.value * other.value, self.modulus)
 end
 
 function ZmodP:Exponential(power)
@@ -117,17 +117,17 @@ function ZmodP:Exponential(power)
       base = (base * base) % self.modulus
       power = math.floor(power / 2)
     end
-    return ZmodP:New(result, self.modulus)
+    return ZmodP:new(result, self.modulus)
 end
 
 function ZmodP:Inverse()
-    local r, New_r = self.modulus, self.value
-    local t, New_t = 0, 1
+    local r, new_r = self.modulus, self.value
+    local t, new_t = 0, 1
 
-    while New_r ~= 0 do
-      local quotient = math.floor(r / New_r)
-      r, New_r = New_r, r - quotient * New_r
-      t, New_t = New_t, t - quotient * New_t
+    while new_r ~= 0 do
+      local quotient = math.floor(r / new_r)
+      r, new_r = new_r, r - quotient * new_r
+      t, new_t = new_t, t - quotient * new_t
     end
 
     if t < 0 then t = t + self.modulus end
