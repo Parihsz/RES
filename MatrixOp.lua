@@ -19,8 +19,8 @@ function Matrix.new(rowCount, colCount, initialValues)
   return matrix
 end
 
--- Additional utility function to initialize a matrix with zeros
-local function zeroMatrix(rows, cols)
+-- Additional utility function to initialize a matrix with Zeros
+local function ZeroMatrix(rows, cols)
   local m = {}
   for i = 1, rows do
     m[i] = {}
@@ -35,7 +35,7 @@ function Matrix.__add(matrixA, matrixB)
   assert(matrixA.rowCount == matrixB.rowCount and matrixA.colCount == matrixB.colCount,
          "Matrices must have the same dimensions for addition.")
 
-  local resultData = zeroMatrix(matrixA.rowCount, matrixA.colCount)
+  local resultData = ZeroMatrix(matrixA.rowCount, matrixA.colCount)
   for row = 1, matrixA.rowCount do
     for col = 1, matrixA.colCount do
       resultData[row][col] = matrixA.data[row][col] + matrixB.data[row][col]
