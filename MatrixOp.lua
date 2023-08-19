@@ -64,7 +64,7 @@ function Matrix.__mul(matrixA, matrixB)
   return Matrix.new(matrixA.rowCount, matrixB.colCount, resultData)
 end
 
-function Matrix:transpose()
+function Matrix:Transpose()
     local transposedData = {}
     for col = 1, self.colCount do
       transposedData[col] = {}
@@ -76,11 +76,11 @@ function Matrix:transpose()
   end
 
 
-function Matrix:luDecomposition()
+function Matrix:LuDecomposition()
     assert(self.rowCount == self.colCount, "LU Decomposition requires a square matrix.")
     local n = self.rowCount
     local L = Matrix.new(n, n)
-    local U = self:clone()
+    local U = self:Clone()
 
     for i = 1, n do
       L.data[i][i] = 1
@@ -96,9 +96,9 @@ function Matrix:luDecomposition()
     return L, U
   end
 
-function Matrix:determinant()
+function Matrix:Determinant()
     assert(self.rowCount == self.colCount, "Determinant requires a square matrix.")
-    local _, U = self:luDecomposition()
+    local _, U = self:LuDecomposition()
     local det = 1
     for i = 1, self.rowCount do
       det = det * U.data[i][i]
@@ -106,9 +106,9 @@ function Matrix:determinant()
     return det
 end
 
-function Matrix:inverse()
+function Matrix:Inverse()
     assert(self.rowCount == self.colCount, "Inverse requires a square matrix.")
-    local L, U = self:luDecomposition()
+    local L, U = self:LuDecomposition()
     local n = self.rowCount
     local inv = Matrix.new(n, n)
 
@@ -133,15 +133,15 @@ function Matrix:inverse()
     return inv
   end
 
-function Matrix:clone()
-    local cloneData = {}
+function Matrix:Clone()
+    local CloneData = {}
     for row = 1, self.rowCount do
-      cloneData[row] = {}
+      CloneData[row] = {}
       for col = 1, self.colCount do
-        cloneData[row][col] = self.data[row][col]
+        CloneData[row][col] = self.data[row][col]
       end
     end
-    return Matrix.new(self.rowCount, self.colCount, cloneData)
+    return Matrix.new(self.rowCount, self.colCount, CloneData)
 end
 
 return Matrix
