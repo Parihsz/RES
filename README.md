@@ -126,8 +126,8 @@ My own implementation of the BigNum library in lua(u).
 
 #### Integer Arithmetics
 ```lua
-local num1 = StrMath.new("1234567890123456789012345678901234567890")
-local num2 = StrMath.new("9876543210987654321098765432109876543210")
+local num1 = BigNum.new("1234567890123456789012345678901234567890")
+local num2 = BigNum.new("9876543210987654321098765432109876543210")
 
 local sum = num1 + num2
 local difference = num1 - num2
@@ -142,8 +142,8 @@ print("Quotient:", quotient, "Remainder:", remainder) -- Quotient, remainder wou
 
 #### Negative Numbers
 ```lua
-local num3 = StrMath.new("-1234567890123456789012345678901234567890")
-local num4 = StrMath.new("-9876543210987654321098765432109876543210")
+local num3 = BigNum.new("-1234567890123456789012345678901234567890")
+local num4 = BigNum.new("-9876543210987654321098765432109876543210")
 
 local sum_negative = num3 + num4
 local product_negative = num3 * num4
@@ -156,8 +156,8 @@ print("Difference (Negative):", difference_negative) -- Difference (Negative): 8
 
 #### High precision arithmetics
 ```lua
-local float1 = StrMath.new("1234.56789")
-local float2 = StrMath.new("9876.54321")
+local float1 = BigNum.new("1234.56789")
+local float2 = BigNum.new("9876.54321")
 
 local sum_float = float1 + float2
 local product_float = float1 * float2
@@ -170,8 +170,8 @@ print("Quotient (Float):", quotient_float)   -- Quotient (Float): 7.980555953346
 
 #### Exponential
 ```lua
-local base = StrMath.new("10")
-local exponent = StrMath.new("20")
+local base = BigNum.new("10")
+local exponent = BigNum.new("20")
 
 local power_result = base ^ exponent
 
