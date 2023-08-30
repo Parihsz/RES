@@ -170,7 +170,7 @@ local primeCount = Primes:PrimeCount(100)
 print("Number of primes <= 100:", primeCount)
 ```
 
-#### Check if a number, say 17, is a twin prime
+#### Check if a number is a twin prime
 ```lua
 local isTwin = Primes:IsTwinPrime(17)
 print("Is 17 a twin prime?", isTwin)
