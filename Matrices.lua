@@ -19,7 +19,6 @@ function Matrix.new(rowCount, colCount, initialValues)
 	return matrix
 end
 
--- Additional utility function to initialize a matrix with Zeros
 local function ZeroMatrix(rows, cols)
 	local m = {}
 	for i = 1, rows do
