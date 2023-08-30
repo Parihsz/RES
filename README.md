@@ -4,6 +4,9 @@
 ## Graphs
 I designed the Graphs library to allow for fast and efficient graph operations in Lua. It provides functionalities for creating and manipulating both directed and undirected graphs. The library supports common graph algorithms such as Depth First Search (DFS), Breadth First Search (BFS), Dijkstra's algorithm for shortest path, and some utility functions like checking connectivity and degree of a vertex.
 
+### Install
+https://www.roblox.com/library/14620044446/RES
+
 ### Usage:
 
 #### Creating a Graph:
@@ -116,3 +119,4 @@ local product = number1:Multiply(number2)
 local power = number1:Exponential(5)
 local inverse = number1:Inverse()
 ```
+
