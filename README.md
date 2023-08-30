@@ -56,8 +56,8 @@ You can retrieve the adjacent vertices of a given vertex.
 local adjacentVertices = graph:GetAdjacentVertices(1)
 ```
 
-## MatrixOp
-The MatrixOp library was created to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
+## Matrices
+The Matrices library was created to provide comprehensive matrix operations in lua. The library allows for creation, manipulation, and calculations with matrices of various dimensions. The library covers matrix operations such as addition, subtraction, multiplication, transposition, LU decomposition, determinant calculation, and matrix inversion. 
 
 ### Usage:
 ```lua
