@@ -1,11 +1,11 @@
 # RES
 ✖️⚡ A Fast & Comprehensive Math Library written in Lua
 
+## Install
+https://www.roblox.com/library/14620044446/RES
+
 ## Graphs
 I designed the Graphs library to allow for fast and efficient graph operations in Lua. It provides functionalities for creating and manipulating both directed and undirected graphs. The library supports common graph algorithms such as Depth First Search (DFS), Breadth First Search (BFS), Dijkstra's algorithm for shortest path, and some utility functions like checking connectivity and degree of a vertex.
-
-### Install
-https://www.roblox.com/library/14620044446/RES
 
 ### Usage:
 
@@ -120,3 +120,58 @@ local power = number1:Exponential(5)
 local inverse = number1:Inverse()
 ```
 
+## Primes
+The primes lib covers functionalities ranging from basic prime testing to more complex tasks such as prime decomposition and factorization. With this, you can dynamically generate prime lists, determine the nth prime, decompose a number into its prime components, and also identify twin primes.
+
+### Usage:
+
+#### Require the module
+```lua
+local Primes = require path.to.Primes
+```
+#### Build a prime list up to 100
+```lua
+local primeList = Primes:BuildPrimesList(100)
+```
+
+#### Check if a number is a prime number
+```lua
+local isPrime = Primes:IsPrime(17)
+print("Is 17 prime?", isPrime) 
+```
+
+#### Generate the next prime after the largest prime in the current list
+```lua
+local nextPrime = Primes:GenerateNextPrime()
+```
+
+#### Decompose a number, say 84, into its prime components
+```lua
+local primeDecomposition = Primes:Decompose(84)
+print("Prime Decomposition of 84:", table.concat(primeDecomposition, ", "))
+```
+
+#### Retrieve the Nth prime
+```lua
+local tenthPrime = Primes:GetNthPrime(10)
+```
+
+#### Prime factorization of a number
+```lua
+local factorization = Primes:PrimeFactorization(60)
+for prime, count in pairs(factorization) do
+    print("Prime:", prime, "Count:", count)
+end
+```
+
+#### Count the number of primes less than or equal to a number
+```lua
+local primeCount = Primes:PrimeCount(100)
+print("Number of primes <= 100:", primeCount)
+```
+
+#### Check if a number, say 17, is a twin prime
+```lua
+local isTwin = Primes:IsTwinPrime(17)
+print("Is 17 a twin prime?", isTwin)
+```
