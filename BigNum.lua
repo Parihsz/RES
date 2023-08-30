@@ -1,4 +1,4 @@
-local StrMath = {
+local BigNum = {
     functions = {}
 }
 
@@ -320,7 +320,7 @@ local specialCases = {
     end,
 }
 
-function StrMath.functions.AddStrings(str1, str2)
+function BigNum.functions.AddStrings(str1, str2)
     for _, specialCase in specialCases do
         local result = specialCase(str1, str2)
         if result then
@@ -330,7 +330,7 @@ function StrMath.functions.AddStrings(str1, str2)
     return helpers.genericAddition(str1, str2)
 end
 
-function StrMath.functions.SubtractStrings(str1, str2)
+function BigNum.functions.SubtractStrings(str1, str2)
     local result = specialCases.ZeroSubtraction(str1, str2)
     if result then
         return result
@@ -338,7 +338,7 @@ function StrMath.functions.SubtractStrings(str1, str2)
     return helpers.SubtractStrings(str1, str2)
 end
 
-function StrMath.functions.MultiplyStrings(str1, str2)
+function BigNum.functions.MultiplyStrings(str1, str2)
     helpers.ValidateNumber(str1)
     helpers.ValidateNumber(str2)
 
@@ -371,7 +371,7 @@ function StrMath.functions.MultiplyStrings(str1, str2)
     return result
 end
 
-function StrMath.functions.DivideStrings(str1, str2)
+function BigNum.functions.DivideStrings(str1, str2)
     local result = specialCases.ZeroDivision(str1, str2)
     if result then
         return result
@@ -383,92 +383,92 @@ function StrMath.functions.DivideStrings(str1, str2)
     return helpers.DivideStrings(str1, str2)
 end
 
-function StrMath.new(valueString)
+function BigNum.new(valueString)
     local instance = { valueString = valueString }
     return setmetatable(instance, mt)
 end
 
-function StrMath.functions.SubtractStrings(str1, str2)
+function BigNum.functions.SubtractStrings(str1, str2)
     return helpers.SubtractStrings(str1, str2)
 end
 
-function StrMath.functions.MultiplyStrings(str1, str2)
+function BigNum.functions.MultiplyStrings(str1, str2)
     return helpers.MultiplyStrings(str1, str2)
 end
 
-function StrMath.functions.DivideStrings(str1, str2)
+function BigNum.functions.DivideStrings(str1, str2)
     if str2 == "0" then
         return nil, "Division by Zero" -- Handle division by Zero
     end
     return helpers.DivideStrings(str1, str2)
 end
 
-function StrMath.functions.ModulusStrings(str1, str2)
+function BigNum.functions.ModulusStrings(str1, str2)
     return helpers.ModulusStrings(str1, str2)
 end
 
-function StrMath.functions.PowerStrings(base, exponent)
+function BigNum.functions.PowerStrings(base, exponent)
     return helpers.PowerStrings(base, exponent)
 end
 
-function StrMath.functions.CompareStrings(str1, str2)
+function BigNum.functions.CompareStrings(str1, str2)
     return helpers.CompareStrings(str1, str2)
 end
 
-function StrMath:__add(other)
-    return StrMath.new(StrMath.functions.AddStrings(self.valueString, other.valueString))
+function BigNum:__add(other)
+    return BigNum.new(BigNum.functions.AddStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__sub(other)
-    return StrMath.new(StrMath.functions.SubtractStrings(self.valueString, other.valueString))
+function BigNum:__sub(other)
+    return BigNum.new(BigNum.functions.SubtractStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__mul(other)
-    return StrMath.new(StrMath.functions.MultiplyStrings(self.valueString, other.valueString))
+function BigNum:__mul(other)
+    return BigNum.new(BigNum.functions.MultiplyStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__div(other)
-    return StrMath.new(StrMath.functions.DivideStrings(self.valueString, other.valueString))
+function BigNum:__div(other)
+    return BigNum.new(BigNum.functions.DivideStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__mod(other)
-    return StrMath.new(StrMath.functions.ModulusStrings(self.valueString, other.valueString))
+function BigNum:__mod(other)
+    return BigNum.new(BigNum.functions.ModulusStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__pow(other)
-    return StrMath.new(StrMath.functions.PowerStrings(self.valueString, other.valueString))
+function BigNum:__pow(other)
+    return BigNum.new(BigNum.functions.PowerStrings(self.valueString, other.valueString))
 end
 
-function StrMath:__eq(other)
+function BigNum:__eq(other)
     return self.valueString == other.valueString
 end
 
-function StrMath:__lt(other)
-    return StrMath.functions.CompareStrings(self.valueString, other.valueString) < 0
+function BigNum:__lt(other)
+    return BigNum.functions.CompareStrings(self.valueString, other.valueString) < 0
 end
 
-function StrMath:__le(other)
-    return StrMath.functions.CompareStrings(self.valueString, other.valueString) <= 0
+function BigNum:__le(other)
+    return BigNum.functions.CompareStrings(self.valueString, other.valueString) <= 0
 end
 
-function StrMath:__tostring()
+function BigNum:__tostring()
     return self.valueString
 end
 
-mt.__index = StrMath
-mt.__Add = StrMath.__Add
-mt.__sub = StrMath.__sub
-mt.__mul = StrMath.__mul
-mt.__div = StrMath.__div
-mt.__mod = StrMath.__mod
-mt.__pow = StrMath.__pow
-mt.__eq = StrMath.__eq
-mt.__lt = StrMath.__lt
-mt.__le = StrMath.__le
-mt.__tostring = StrMath.__tostring
+mt.__index = BigNum
+mt.__Add = BigNum.__Add
+mt.__sub = BigNum.__sub
+mt.__mul = BigNum.__mul
+mt.__div = BigNum.__div
+mt.__mod = BigNum.__mod
+mt.__pow = BigNum.__pow
+mt.__eq = BigNum.__eq
+mt.__lt = BigNum.__lt
+mt.__le = BigNum.__le
+mt.__tostring = BigNum.__tostring
 
 
-mt.__index = StrMath
+mt.__index = BigNum
 mt.__metatable = "protected"
 
-return StrMath
+return BigNum
