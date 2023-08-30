@@ -175,3 +175,7 @@ print("Number of primes <= 100:", primeCount)
 local isTwin = Primes:IsTwinPrime(17)
 print("Is 17 a twin prime?", isTwin)
 ```
+
+### Expected Outputs:
+![Screenshot 2023-08-30 092012](https://github.com/Parihsz/RES/assets/65139606/e5916887-b25b-422e-baf5-5e252a506b4b)
+
