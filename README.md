@@ -145,7 +145,7 @@ print("Is 17 prime?", isPrime)
 local nextPrime = Primes:GenerateNextPrime()
 ```
 
-#### Decompose a number, say 84, into its prime components
+#### Decompose a number into its components
 ```lua
 local primeDecomposition = Primes:Decompose(84)
 print("Prime Decomposition of 84:", table.concat(primeDecomposition, ", "))
