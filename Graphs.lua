@@ -20,7 +20,7 @@ function Graph:new(vertices, edges)
 	end
 
 	for i = 1, #edges do
-		o:addEdge(edges[i][1], edges[i][2], edges[i][3])
+		o:AddEdge(edges[i][1], edges[i][2], edges[i][3])
 	end
 
 	return o
