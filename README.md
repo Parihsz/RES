@@ -86,21 +86,19 @@ I built the Scalars library to provide fast and efficient arithmetic operations 
 
 #### General Functions
 ```lua
-local Scalars = require path.to.Scalars
-local ScalarMaths = Scalars.ScalarMaths
+local Scalars = require(script.Scalars)
 
 local value = 25
-
-local sqrtValue = ScalarMaths:Sqrt(value)
+local sqrtValue = Scalars:Sqrt(value)
 print("Square Root of", value, "is", sqrtValue)
 
-local sinValue = ScalarMaths:Sin(value)
+local sinValue = Scalars:Sin(value)
 print("Sine of", value, "is", sinValue)
 
-local cosValue = ScalarMaths:Cos(value)
+local cosValue = Scalars:Cos(value)
 print("Cosine of", value, "is", cosValue)
 
-local logValue = ScalarMaths:Log(value)
+local logValue = Scalars:Log(value)
 print("Natural Logarithm of", value, "is", logValue)
 ```
 
