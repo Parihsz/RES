@@ -119,8 +119,8 @@ local power = number1:Exponential(5)
 local inverse = number1:Inverse()
 ```
 
-## StrMath
-StrMath is a Lua operations library designed to facilitate fast and efficient arithmetic operations on large integers represented as strings. With StrMath, you can work with numbers that would otherwise exceed the conventional numeric limits in Lua. 
+## BigNum
+My own implementation of the BigNum library in lua(u). 
 
 ### Usage:
 
