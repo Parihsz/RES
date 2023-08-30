@@ -1,5 +1,5 @@
 # RES
-✖️⚡ RES is Blazingly fast and abstracted Maths libraries container for roblox.
+✖️⚡ A Fast & Comprehensive Math Library written in Lua
 
 ## Graphs
 I designed the Graphs library to allow for fast and efficient graph operations in Lua. It provides functionalities for creating and manipulating both directed and undirected graphs. The library supports common graph algorithms such as Depth First Search (DFS), Breadth First Search (BFS), Dijkstra's algorithm for shortest path, and some utility functions like checking connectivity and degree of a vertex.
