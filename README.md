@@ -1,5 +1,5 @@
 # RES
-✖️⚡ A Fast & Comprehensive Math Library written in Lua
+✖️⚡ Fast and Comprehensive math libraries written in Lua
 
 ## Install
 
