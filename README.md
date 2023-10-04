@@ -1,5 +1,5 @@
 # RES
-✖️⚡ Fast and Comprehensive math libraries written in Lua
+✖️⚡ Math Packages for Roblox
 
 ## Install
 
