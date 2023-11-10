@@ -31,7 +31,7 @@ end
 function Statistics.Mean(data)
     assert(isTableOfNumbers(data), "Data must be a table of numbers")
     local sum = 0
-    for _, value in ipairs(data) do
+    for _, value in data do
         sum = sum + value
     end
     return sum / #data
@@ -55,7 +55,7 @@ function Statistics.Variance(data)
     assert(isTableOfNumbers(data) and #data > 1, "Data must be a table of numbers with at least two elements")
     local mean = Statistics.Mean(data)
     local sum = 0
-    for _, value in ipairs(data) do
+    for _, value in data do
         sum = sum + (value - mean)^2
     end
     return sum / (#data - 1)
