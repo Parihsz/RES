@@ -5,6 +5,47 @@
 
 Roblox Model Link: https://www.roblox.com/library/14620044446/RES 
 
+## Statistics
+The Statistics package is the newest addition to RES. It is used to provide tooling for developers for statistical analysis. The library contains quartiles, deciles, and other summary statistics essential for undestanding data distributions. (@Aegyo I continued your legacy)
+
+### Usage:
+
+#### Calculating Quartiles:
+```lua
+local data = { ... }  -- Your dataset goes here
+local Q1 = Statistics:Quartile(data, 1)
+local median = Statistics:Quartile(data, 2)
+local Q3 = Statistics:Quartile(data, 3)
+local IQR = Q3 - Q1
+```
+
+#### Calculating Deciles:
+```lua
+local D1 = Statistics:Decile(data, 1)
+-- ... up to D9
+```
+
+#### Calculating Percentiles:
+```lua
+local P90 = Statistics:Percentile(data, 90)
+```
+
+#### Measures of Central Tendency and Dispersion:
+```lua
+local mean = Statistics:Mean(data)
+local median = Statistics:Median(data)
+local mode = Statistics:Mode(data)
+local range = Statistics:Range(data)
+local variance = Statistics:Variance(data)
+local standardDeviation = Statistics:StandardDeviation(data)
+```
+
+#### Z-Score:
+```lua
+local zScore = Statistics:ZScore(data, specificValue)
+```
+
+
 ## Graphs
 I designed the Graphs library to allow for fast and efficient graph operations in Lua. It provides functionalities for creating and manipulating both directed and undirected graphs. The library supports common graph algorithms such as Depth First Search (DFS), Breadth First Search (BFS), Dijkstra's algorithm for shortest path, and some utility functions like checking connectivity and degree of a vertex.
 
